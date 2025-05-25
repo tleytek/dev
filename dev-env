@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+real_run="0"
+
+if [ -z "$XDG_CONFIG_HOME" ]; then
+  echo "No XDG_CONFIG_HOME set"
+  echo "Using ~/.config"
+  XDG_CONFIG_HOME=$HOME/.config
+fi
+
+if [ -z "$DEV_ENV" ]; then
+  echo "env var DEV_ENV missing"
+  exit 1
+fi

@@ -1,0 +1,29 @@
+VIM="nvim"
+DEV_ENV=$HOME/dev
+
+export XDG_CONFIG_HOME=$HOME/.config
+export GOPATH=$HOME/.local/go
+export GIT_EDITOR=$VIM
+export ESLINT_USE_FLAT_CONFIG=false
+
+# 
+# export HISTCONTROL=ignoreboth
+# shopt -s histappend
+
+bindkey -s ^f "tmux-sessionizer\n"
+
+addToPath() {
+    if [[ "$PATH" != *"$1"* ]]; then
+        export PATH=$PATH:$1
+    fi
+}
+
+addToPathFront() {
+    if [[ ! -z "$2" ]] || [[ "$PATH" != *"$1"* ]]; then
+        export PATH=$1:$PATH
+    fi
+}
+
+addToPathFront /opt/nvim-linux64/bin
+addToPathFront $HOME/.local/bin
+addToPathFront $HOME/.local/scripts
