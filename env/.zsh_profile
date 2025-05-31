@@ -1,14 +1,24 @@
-VIM="nvim"
-DEV_ENV=$HOME/dev
-
 export XDG_CONFIG_HOME=$HOME/.config
+export DEV_ENV=$HOME/dev
+
 export GOPATH=$HOME/.local/go
-export GIT_EDITOR=$VIM
+export GOROOT=/usr/local/go
+export PATH=$HOME/go/bin:$GOROOT/bin:$PATH
+
+export GIT_EDITOR="nvim"
 export ESLINT_USE_FLAT_CONFIG=false
 
-# 
-# export HISTCONTROL=ignoreboth
-# shopt -s histappend
+export DOCKER_BUILDKIT=1
+export COMPOSE_DOCKER_CLI_BUILD=1
+
+export TOKEN_FOR_GITHUB="$(pass edwin/TOKEN_FOR_GITHUB)"
+export OPENAI_API_KEY="$(pass openai/api-key)"
+export BEDROCK_KEYS=aws_access_key_id,aws_secret_access_key,aws_region
+
+export PYTHON=/usr/bin/python2
+
+# Don’t save commands matching patterns
+export HISTIGNORE="*pass *:*secret*"
 
 bindkey -s ^f "tmux-sessionizer\n"
 
@@ -25,5 +35,4 @@ addToPathFront() {
 }
 
 addToPathFront /opt/nvim-linux64/bin
-addToPathFront $HOME/.local/bin
 addToPathFront $HOME/.local/scripts
