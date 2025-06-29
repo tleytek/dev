@@ -1,3 +1,16 @@
 #!/usr/bin/env bash
 
-sudo apt install neovim
+if command -v nvim > /dev/null 2>&1; then
+  echo "neovim already installed"
+else
+  echo "installing neovim"
+  cd /tmp
+  sudo apt install make cmake
+  git clone https://github.com/neovim/neovim.git
+  cd neovim
+  make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/neovim"
+  sudo make install
+  export PATH="$HOME/neovim/bin:$PATH"
+  cd ../
+  rm -rf ./neovim
+fi

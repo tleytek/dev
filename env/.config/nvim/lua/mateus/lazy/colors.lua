@@ -11,7 +11,7 @@ return {
 		"folke/tokyonight.nvim",
 		lazy = false,
 		config = function()
-			ColorMyPencils()
+			-- ColorMyPencils()
 			-- require("tokyonight").setup({
 			-- 	style = "moon",
 			-- 	transparent = true,
@@ -34,7 +34,14 @@ return {
 			})
 			-- vim.cmd("colorscheme rose-pine")
 
-			ColorMyPencils()
+			-- ColorMyPencils()
+		end,
+	},
+	{
+		"metalelf0/black-metal-theme-neovim",
+		config = function()
+			require("black-metal").setup({})
+			require("black-metal").load("gorgoroth")
 		end,
 	},
 }

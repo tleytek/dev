@@ -1,7 +1,25 @@
 #!/usr/bin/env bash
 
-sudo apt install zsh
+if command -v zsh >/dev/null 2>&1; then
+  echo "zsh already installed"
+else
+  echo "installing zsh"
+  sudo apt update
+  sudo apt install -y zsh
+fi
+
 hash -r
-chsh -s $(which zsh)
-sudo chsh -s $(which zsh)
-sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+
+if [ "$SHELL" != "$(which zsh)" ]; then
+  echo "setting zsh as default shell"
+  sudo chsh -s $(which zsh)
+else
+  echo "ohmyzsh already installed"
+fi
+
+if [ -d "$HOME/.oh-my-zsh" ]; then
+  echo "ohmyzsh is already installed"
+else
+  echo "installing ohmyzsh"
+  RUNZSH=no CHSH=no KEEP_ZSHRC=no sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
+fi

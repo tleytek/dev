@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+sudo apt install fonts-jetbrains-mono
+
+# if fc-list | grep -iq iosevka; then
+#   echo "iosevka font is installed"
+# else
+cd /tmp
+wget -O ttf-iosevka.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/IosevkaTerm.zip
+# wget -O ttf-iosevka.zip https://github.com/be5invis/Iosevka/releases/download/v33.2.6/PkgTTC-Iosevka-33.2.6.zip
+sudo mkdir -p /usr/share/fonts/iosevka
+sudo unzip ttf-iosevka.zip -d /usr/share/fonts/iosevka
+sudo fc-cache -fv
+rm -rf ttf-iosevka.zip
+# fi

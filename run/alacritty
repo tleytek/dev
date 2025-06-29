@@ -1,3 +1,24 @@
 #!/usr/bin/env bash
 
-sudo apt install alacritty
+sudo apt install curl
+sudo apt install cmake g++ pkg-config libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3
+
+if command -v cargo > /dev/null 2>&1; then
+  echo "rust is already installed"
+else
+  echo "installing rust"
+  curl https://sh.rustup.rs -sSf | sh
+  export PATH="$HOME/.cargo/bin:$PATH"
+fi
+
+if command -v alacritty > /dev/null 2>&1; then
+  echo "alacritty is already installed"
+else
+  cd /tmp
+  git clone https://github.com/alacritty/alacritty.git
+  cd alacritty
+  cargo build --release --no-default-features --features=x11
+  sudo cp target/release/alacritty /usr/local/bin
+  cd ../
+  rm -rf ./alacritty
+fi
