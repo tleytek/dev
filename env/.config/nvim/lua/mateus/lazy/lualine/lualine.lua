@@ -1,13 +1,14 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = {
-		"metalelf0/black-metal-theme-neovim",
 		"nvim-tree/nvim-web-devicons",
 	},
 	config = function()
 		require("lualine").setup({
 			options = {
-				theme = "blackmetal-gorgoroth",
+				-- theme = require("lualine.themes.black_metal"),
+				theme = require("mateus.lazy.lualine.themes.black_metal"),
+				-- theme = "black_metal",
 			},
 		})
 	end,

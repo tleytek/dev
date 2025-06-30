@@ -8,10 +8,11 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    spec = {
-        { "LazyVim/LazyVim" },
-        { import = "mateus.lazy", },
-        { import = "mateus.lazy.lsp", },
-    },
-    change_detection = { notify = false },
+	spec = {
+		{ "LazyVim/LazyVim" },
+		{ import = "mateus.lazy" },
+		{ import = "mateus.lazy.lsp" },
+		{ import = "mateus.lazy.lualine" },
+	},
+	change_detection = { notify = false },
 })
