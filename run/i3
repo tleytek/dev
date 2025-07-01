@@ -2,6 +2,7 @@
 
 sudo apt update
 sudo apt install i3
+sudo apt install i3blocks
 
 CONF_FILES=(
   /etc/lightdm/lightdm.conf
