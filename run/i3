@@ -2,3 +2,31 @@
 
 sudo apt update
 sudo apt install i3
+
+CONF_FILES=(
+  /etc/lightdm/lightdm.conf
+  /etc/lightdm/lightdm.conf.d/*.conf
+)
+
+CONFIG=$(cat "${CONF_FILES[@]}" 2>/dev/null)
+
+SEAT_SECTION=$(awk '
+  /^\[Seat:\*\]/ {in_seat=1; next}
+  /^\[/ {in_seat=0}
+  in_seat && NF
+' <<< "$CONFIG")
+
+if grep -qE '^\s*user-session\s*=\s*default' <<< "$SEAT_SECTION"; then
+  echo "lightdm is configured to preserve last user session"
+else
+  echo "lightdm is NOT configured to preserve last user session"
+
+  sudo tee /etc/lightdm/lightdm.conf.d/10-default-session.conf > /dev/null <<EOF
+[Seat:*]
+user-session=default
+EOF
+
+  echo -e "[Desktop]\nSession=i3" > ~/.dmrc
+  chmod 644 ~/.dmrc
+  chown "$USER:$USER" ~/.dmrc
+fi
