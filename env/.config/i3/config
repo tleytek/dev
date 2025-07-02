@@ -34,7 +34,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
-exec --no-startup-id xset r rate 200 50
+exec --no-startup-id xset r rate 300 25
 # 700s until screen saver or w/e turns on
 exec --no-startup-id xset dpms 700 0 0
 

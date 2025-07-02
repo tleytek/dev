@@ -113,3 +113,5 @@ source $ZSH/oh-my-zsh.sh
 #
 # aliases
 source ~/.zsh_profile
+export PATH="/home/tleytek/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/home/tleytek/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
