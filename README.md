@@ -8,7 +8,7 @@ ThePrimagens implementation but with my stuff
 - Verify `groups yourusername`
 - Logout and back in for the changes to take effect
 ### 2. Comment out the use of the local ISO as the apt repo
-`sudo vi /etc/apt/sources.list`
+- `sudo vi /etc/apt/sources.list`
 ### 3. Install git
 - `sudo apt install git`
 ### (Bonus) Add ssh keys
