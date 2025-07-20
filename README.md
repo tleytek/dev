@@ -7,7 +7,9 @@ ThePrimagens implementation but with my stuff
 - Add the user to the sudo group `usermod -aG sudo yourusername`
 - Verify `groups yourusername`
 - Logout and back in for the changes to take effect
-### 2. Install git
+### 2. Comment out the use of the local ISO as the apt repo
+`sudo vi /etc/apt/sources.list`
+### 3. Install git
 - `sudo apt install git`
 ### (Bonus) Add ssh keys
 - Generate a new SSH key `ssh-keygen -t ed25519 -C "your_email@example.com"`
