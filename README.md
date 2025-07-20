@@ -7,8 +7,9 @@ ThePrimagens implementation but with my stuff
 - Add the user to the sudo group `usermod -aG sudo yourusername`
 - Verify `groups yourusername`
 - Logout and back in for the changes to take effect
-### 2. Comment out the use of the local ISO as the apt repo
+### 2. Comment out the use of the local ISO as the apt repo and update
 - `sudo vi /etc/apt/sources.list`
+- `sudo apt update`
 ### 3. Install git
 - `sudo apt install git`
 ### (Bonus) Add ssh keys
