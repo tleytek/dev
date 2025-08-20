@@ -1,0 +1,8 @@
+require("plugins.treesitter")
+require("plugins.telescope")
+require("plugins.harpoon")
+require("plugins.colorscheme")
+require("plugins.lsp")
+require("plugins.lint")
+require("plugins.format")
+require("plugins.git")
