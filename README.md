@@ -12,7 +12,7 @@ ThePrimagens implementation but with my stuff
 - `sudo apt update`
 ### 3. Install git
 - `sudo apt install git`
-### (Bonus) Add ssh keys
+### Add ssh keys
 - Generate a new SSH key `ssh-keygen -t ed25519 -C "your_email@example.com"`
 - Spam enter for the defaults
 - Start the SSH agent and add your key
