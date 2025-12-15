@@ -3,5 +3,5 @@ import = ["~/.config/alacritty/gorgoroth.toml"]
 live_config_reload = true
 
 [font]
-normal = { family = "Iosevka Term", style = "Regular" }
+normal = { family = "IosevkaTerm Nerd Font", style = "Regular" }
 size = 16
