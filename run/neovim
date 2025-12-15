@@ -5,12 +5,10 @@ if command -v nvim > /dev/null 2>&1; then
 else
   echo "installing neovim"
   cd /tmp
-  sudo apt install make cmake
-  git clone https://github.com/neovim/neovim.git
-  cd neovim
-  make CMAKE_EXTRA_FLAGS="-DCMAKE_INSTALL_PREFIX=$HOME/neovim"
-  sudo make install
-  export PATH="$HOME/neovim/bin:$PATH"
-  cd ../
-  rm -rf ./neovim
+  wget https://github.com/neovim/neovim/releases/download/nightly/nvim-linux-x86_64.tar.gz
+  tar -xzf nvim-linux-x86_64.tar.gz
+  sudo rm -rf /opt/nvim-nightly
+  sudo mv nvim-linux-x86_64 /opt/nvim-nightly
+  #symlink only the binary
+  sudo ln -sf /opt/nvim-nightly/bin/nvim /usr/local/bin/nvim
 fi
