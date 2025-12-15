@@ -23,3 +23,7 @@ ThePrimagens implementation but with my stuff
 - Show and copy the public key output `cat ~/.ssh/id_ed25519.pub`
 - Add the public key to what ever git hosting service you are using
 - Test the connection `ssh -T git@github.com`, hit yes to add the key fingerprint
+
+## What is DEV_ENV?
+It is the absolute location of the dev directory that you cloned. DEV_ENV=~/dev ./dev-run while in the dev directory.
+
