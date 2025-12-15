@@ -11,10 +11,8 @@ fi
 hash -r
 
 if [ "$SHELL" != "$(which zsh)" ]; then
-  echo "setting zsh as default shell"
-  sudo chsh -s $(which zsh)
-else
-  echo "ohmyzsh already installed"
+  echo "setting zsh as default shell (for next login)"
+  chsh -s $(which zsh)
 fi
 
 if [ -d "$HOME/.oh-my-zsh" ]; then
