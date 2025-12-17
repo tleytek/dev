@@ -112,6 +112,12 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # aliases
-source ~/.zsh_profile
+alias dev-env="cd ~/dev && ./dev-env"
+alias dev-run="cd ~/dev && ./dev-run"
+
+# wtf is this
 export PATH="/home/tleytek/.config/herd-lite/bin:$PATH"
 export PHP_INI_SCAN_DIR="/home/tleytek/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+
+# Putting all the env var goodies here
+source ~/.zsh_profile
