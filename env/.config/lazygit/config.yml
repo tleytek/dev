@@ -1,0 +1,4 @@
+gui:
+  colors:
+    selectedLineBgColor: "#666666" # Readable gray
+
