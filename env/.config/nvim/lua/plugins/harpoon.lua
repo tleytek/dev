@@ -4,22 +4,24 @@ local harpoon2_path = data_path .. "/site/pack/core/opt/harpoon-v2"
 
 -- Check if we need to clone Harpoon v2
 if vim.fn.isdirectory(harpoon2_path) == 0 then
-  vim.fn.system(string.format("git clone -b harpoon2 --depth 1 https://github.com/ThePrimeagen/harpoon.git %s", harpoon2_path))
+	vim.fn.system(
+		string.format("git clone -b harpoon2 --depth 1 https://github.com/ThePrimeagen/harpoon.git %s", harpoon2_path)
+	)
 end
 
 -- Add harpoon2 to runtime path
 vim.opt.rtp:prepend(harpoon2_path)
 
 vim.pack.add({
-  { src = "https://github.com/nvim-lua/plenary.nvim" },
-  { src = "https://github.com/nvim-telescope/telescope.nvim" },
+	{ src = "https://github.com/nvim-lua/plenary.nvim" },
+	{ src = "https://github.com/nvim-telescope/telescope.nvim" },
 })
 
 local harpoon = require("harpoon")
 harpoon:setup({
-  settings = {
-    save_on_toggle = true,
-  }
+	settings = {
+		save_on_toggle = true,
+	},
 })
 
 -- Telescope extension
@@ -50,14 +52,16 @@ harpoon:extend(harpoon_extensions.builtins.highlight_current_file())
 -- vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end,
 --     { desc = "Open harpoon window" })
 
-vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
-
-vim.keymap.set("n", "<leader>a", function() 
-  harpoon:list():add()
+vim.keymap.set("n", "<C-e>", function()
+	harpoon.ui:toggle_quick_menu(harpoon:list())
 end)
 
-for i = 1,4 do
-  vim.keymap.set("n", ("<C-%s>"):format(("htsn"):sub(i,i)), function()
-    harpoon:list():select(i)
-  end)
+vim.keymap.set("n", "<leader>a", function()
+	harpoon:list():add()
+end)
+
+for i = 1, 4 do
+	vim.keymap.set("n", ("<C-%s>"):format(("htsn"):sub(i, i)), function()
+		harpoon:list():select(i)
+	end)
 end
