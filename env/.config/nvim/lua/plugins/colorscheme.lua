@@ -1,10 +1,9 @@
 vim.pack.add({
-  {
-    src = "https://github.com/rose-pine/neovim"
-  }
-})
-require("rose-pine").setup({
-  disable_background = true,
+	{
+		src = "https://github.com/y9san9/y9nika.nvim",
+	},
 })
 
-vim.cmd[[colorscheme rose-pine]]
+vim.o.termguicolors = true
+vim.o.background = "dark"
+vim.cmd.colorscheme("y9nika")
