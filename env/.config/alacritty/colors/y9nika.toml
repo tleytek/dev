@@ -1,0 +1,23 @@
+[colors.primary]
+background = "#0e1415"
+foreground = "#dddddd"
+
+[colors.normal]
+black   = "#0e1415"
+red     = "#aa3731"
+green   = "#95cb82"
+yellow  = "#dfdf8e"
+blue    = "#71ade7"
+magenta = "#71ade7"
+cyan    = "#95cb82"
+white   = "#dddddd"
+
+[colors.bright]
+black   = "#666666"
+red     = "#aa3731"
+green   = "#95cb82"
+yellow  = "#dfdf8e"
+blue    = "#71ade7"
+magenta = "#71ade7"
+cyan    = "#95cb82"
+white   = "#ffffff"
