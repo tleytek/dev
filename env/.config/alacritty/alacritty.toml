@@ -1,5 +1,5 @@
 [general]
-import = ["~/.config/alacritty/gorgoroth.toml"]
+import = ["~/.config/alacritty/colors/y9nika.toml"]
 live_config_reload = true
 
 [font]
