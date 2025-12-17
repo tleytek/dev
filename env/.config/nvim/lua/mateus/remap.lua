@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>pe", vim.cmd.Ex)
+-- Using oil now instead of netrw
+-- vim.keymap.set("n", "<leader>pe", vim.cmd.Ex)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
@@ -11,12 +12,15 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
--- greatest remap ever
+-- visual selection paste without clearing out the current yank
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
--- next greatest remap ever : asbjornHaland
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]], {
+	desc = "Yank to system clipboard",
+})
+vim.keymap.set("n", "<leader>Y", [["+Y]], {
+	desc = "Yank line (to end) to system clipboard",
+})
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
